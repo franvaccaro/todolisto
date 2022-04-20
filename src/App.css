@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
+  height: 100vh;
   font-family: 'Poppins', sans-serif !important;
   font-style: normal;
   margin: 0;
@@ -134,6 +135,14 @@ input[type=text]:focus {
   color: #FFFFFF;
   background: #E70E42;
   cursor: pointer;
+}
+
+/* Credits */
+
+.creditsTitle {
+  font-size: 13px;
+  text-align: center;
+  color: #595959;
 }
 
 @media only screen and (max-width: 600px) {

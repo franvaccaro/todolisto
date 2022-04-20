@@ -1,15 +1,20 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { Backdrop, Container, CssBaseline } from '@mui/material';
+import {
+  Backdrop, Container, CssBaseline,
+} from '@mui/material';
+import { useSelector } from 'react-redux';
 import theme from './components/theme';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import Loader from './components/Loaders/Loader';
 import AllSnackbar from './components/Snackbars/AllSnackbar';
+import Credits from './components/Credits';
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const todoArr = useSelector((state) => state.todoArr);
 
   useEffect(() => {
     setLoading(true);
@@ -35,6 +40,9 @@ function App() {
             <TodoForm />
             <TodoList />
             <AllSnackbar />
+            {todoArr.todos.length > 0
+              ? null
+              : <Credits />}
           </Container>
         )}
     </ThemeProvider>
